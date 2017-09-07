@@ -56,14 +56,14 @@ head(steps_table)
 ##          0        126      11352      12116      13294      15420
 ```
 
-Making an histogram showing in how many days the subject reached different levels of steps:
+Making the histogram of the total number of steps taken each day
 
 
 ```r
 hist(steps_table, 
-     main = "Number of days in which the subject reached different steps milestones",
-     xlab = "Step classes [count]",
-     ylab = "Number of days [days]",
+     main = "Histogram of the total number of steps taken each day",
+     xlab = "Total number of steps taken each day",
+     ylab = "Frequency [days]",
      ylim = c(0, 30),
      col = "blue"
         )
@@ -155,7 +155,7 @@ db_complete$steps[is.na(db_complete$steps)==TRUE] = round(NEW_steps)
 db_complete$steps = as.integer(db_complete$steps)
 ```
 
-Making an histogram showing in how many days the subject reached different levels of steps after having substituted the NAs in the steps variable:
+Making the histogram of the total number of steps taken each day after having substituted the NAs in the steps variable:
 
 
 ```r
@@ -170,9 +170,9 @@ head(steps_table_complete)
 
 ```r
 hist(steps_table_complete, 
-     main = "Number of days in which the subject reached different steps milestones",
-     xlab = "Step classes [count]",
-     ylab = "Number of days [days]",
+     main = "Histogram of the total number of steps taken each day",
+     xlab = "Total number of steps taken each day",
+     ylab = "Frequency [days]",
      ylim = c(0, 30),
      col = "blue"
         )
@@ -227,9 +227,6 @@ legend("topleft", legend = c("With NAs", "After NAs substitution"), col = c("bla
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
-
-
-
 
 ##4. Are there differences in activity patterns between weekdays and weekends?
 

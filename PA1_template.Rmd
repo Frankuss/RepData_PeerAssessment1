@@ -39,13 +39,13 @@ steps_table = tapply(db$steps, db$date, sum, na.rm = TRUE)
 head(steps_table)
 ```
 
-Making an histogram showing in how many days the subject reached different levels of steps:
+Making the histogram of the total number of steps taken each day
 
 ```{r, echo = TRUE, fig.width=12}
 hist(steps_table, 
-     main = "Number of days in which the subject reached different steps milestones",
-     xlab = "Step classes [count]",
-     ylab = "Number of days [days]",
+     main = "Histogram of the total number of steps taken each day",
+     xlab = "Total number of steps taken each day",
+     ylab = "Frequency [days]",
      ylim = c(0, 30),
      col = "blue"
         )
@@ -106,7 +106,7 @@ db_complete$steps[is.na(db_complete$steps)==TRUE] = round(NEW_steps)
 db_complete$steps = as.integer(db_complete$steps)
 ```
 
-Making an histogram showing in how many days the subject reached different levels of steps after having substituted the NAs in the steps variable:
+Making the histogram of the total number of steps taken each day after having substituted the NAs in the steps variable:
 
 ```{r, echo = TRUE, fig.width=12}
 
@@ -114,9 +114,9 @@ steps_table_complete = tapply(db_complete$steps, db_complete$date, sum, na.rm = 
 head(steps_table_complete)
 
 hist(steps_table_complete, 
-     main = "Number of days in which the subject reached different steps milestones",
-     xlab = "Step classes [count]",
-     ylab = "Number of days [days]",
+     main = "Histogram of the total number of steps taken each day",
+     xlab = "Total number of steps taken each day",
+     ylab = "Frequency [days]",
      ylim = c(0, 30),
      col = "blue"
         )
@@ -156,9 +156,6 @@ points(steps_table_complete,
 legend("topleft", legend = c("With NAs", "After NAs substitution"), col = c("black", "red"), lty = 1)
 
 ```
-
-
-
 
 ##4. Are there differences in activity patterns between weekdays and weekends?
 
